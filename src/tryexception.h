@@ -1,0 +1,5 @@
+#ifndef _TRYEXCEPTION_H
+#define _TRYEXCEPTION_H
+
+
+#endif // _TRYEXCEPTION_H
