@@ -14,32 +14,29 @@ print out the following error:
 */
 
 #define DIVIDED_BY_ZERO 1
-#define DIVIDED_BY_NED  2
+#define DIVIDED_BY_NEG  2
 
-float checkRadius(float raduis){
-if((raduis == 0)
-	Thow(ex)//Throw(createExeception("Cannot devide by zero", DiVIDED_BY_ZERO)); \
-                              trying comment
-else if( raduis <0.0)
-  Throw(createExeception("Cannot devide by zero", DiVIDED_IS_NEG));
-return raduis;
+void checkRadius(float radius){
+  if((radius == 0)
+    Throw(createException("Cannot devide by zero", DIVIDED_BY_ZERO)); 
+                               
+  else if( radius <0.0)
+    Throw(createException("Cannot devide by zero", DIVIDED_IS_NEG));
+  return radius;
 }
 
 
 void tryException(float radius) {
-CException_T ex;
+  CException_T ex;
 
-Try{
-//try something..
-float radius = checkRadius(radius);
-float area = 3.1459*(radius*radius);
-printf("The area of the circle with 2 meters radius is %f/n",area)
+  Try{
+  //try something..
+  checkRadius(radius);
+  float area = 3.1415*(radius*radius);
+  printf("The area of the circle with 2 meters radius is %f/n",area)
 
-} Catch(ex) {
-// Resolve the problem..
-  if(ex == DIVIDED_BY_ZERO)
-    printf("The radius cannot be zero");
-  else if (ex == DIVIDED_BY_NEG)
-      printf("The radius cannot be negative");
-}   
+  } Catch(ex) {
+  // Resolve the problem..
+    dumpException(ex);
+  }   
 }

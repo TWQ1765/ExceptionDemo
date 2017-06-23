@@ -1,21 +1,14 @@
-#ifndef _TRYEXCEPTION_H
-#define _TRYEXCEPTION_H
+#ifndef _EXCEPTION_H
+#define _EXCEPTION_H
 
-
-
-typedef struct Excerption Excerption;
-typedef struct Excerption ExcerptionPtr;
-struct  Excerption {
+typedef struct Exception Exception;
+typedef struct Exception* ExceptionPtr;
+struct  Exception {
   char *msg;
   int errorCode;
 };
 
-Exception *createException(char *msg, int errorCode){
-  Exception *e = malloc(sizeof(Exception));
-  e->msg = msg;
-  e->errorCode = errorCode;
-  return e;
-}
-
-
+Exception *createException(char *msg, int errorCode);
+void freeException(Exception *e);
+void dumpException(Exception *e);
 #endif // _TRYEXCEPTION_H

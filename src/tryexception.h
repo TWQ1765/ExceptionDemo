@@ -3,7 +3,7 @@
 
 
 
-float checkRadius(float raduis);
+void checkRadius(float radius);
 void tryException(float radius);
 
 
